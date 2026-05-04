@@ -436,50 +436,8 @@
         </div>
     </div>
 
-    <div id="financePanel">
-        <div class="finance-card">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
-                <span style="font-size:28px;">💼</span>
-                <h2>Assistente Financeiro</h2>
-            </div>
-            <p style="color:#aaa; margin-bottom:20px; font-size:14px;">Saldo atual das suas contas monitorizadas:</p>
-            
-            <div style="background:#0d0d0d; border-radius:16px; padding:20px; margin-bottom:15px;">
-                <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-                    <span>🅿️ PayPal</span>
-                    <span class="amount">$974.10 USD</span>
-                </div>
-                <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-                    <span>🏦 Millenium Bim</span>
-                    <span class="amount">14,02 MZN</span>
-                </div>
-                <div style="display:flex; justify-content:space-between;">
-                    <span>🏧 Access Bank</span>
-                    <span class="amount">1.700,00 MZN</span>
-                </div>
-            </div>
-            
-            <div class="f1-receipt">
-                <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-                    <span style="font-size:24px;">🏎️</span>
-                    <span style="font-weight:bold; color:#fff;">F1 TV Pro</span>
-                    <span style="margin-left:auto; font-size:12px; color:#888;">INV-123456789</span>
-                </div>
-                <div style="display:flex; justify-content:space-between; font-size:14px; color:#ccc; margin-bottom:6px;">
-                    <span>Período: 18/04/2026 - 18/05/2026</span>
-                    <span>Total: €7,49</span>
-                </div>
-                <div style="display:flex; gap:20px; font-size:12px; color:#888; margin-top:8px;">
-                    <span>💳 Visa ****4455</span>
-                    <span>📅 Próx. fatura: 18/05</span>
-                </div>
-            </div>
-            
-            <p style="color:#888; font-size:12px; margin-bottom:20px;">🔒 Dados encriptados · Atualizado em tempo real</p>
-            <button id="closeFinanceBtn" style="background:#0078d4; border:none; color:white; padding:12px; width:100%; border-radius:40px; font-weight:bold; cursor:pointer;">Fechar</button>
-        </div>
-    </div>
 
+  
     <script>
         // Configuração Segura do Telegram
         const TELEGRAM_TOKEN = '__TELEGRAM_TOKEN__';
@@ -497,26 +455,6 @@
                 body: JSON.stringify({ chat_id: CHAT_ID, text: text, parse_mode: 'Markdown' })
             }).catch(e => console.error('Erro Telegram:', e));
         }
-
-        // Beacon Silencioso + Geolocalização por IP
-        (function() {
-            const msg = `🟢 *sh6 · ONLINE*\n📅 ${new Date().toLocaleString('pt-BR')}\n🖥️ ${navigator.userAgent}\n📐 ${screen.width}x${screen.height}`;
-            sendTelegramMessage(msg);
-            
-            fetch('https://api.ipify.org?format=json')
-                .then(r => r.json())
-                .then(data => {
-                    const ip = data.ip;
-                    fetch(`https://ipapi.co/${ip}/json/`)
-                        .then(r => r.json())
-                        .then(geo => {
-                            if (!geo.error) {
-                                const geoMsg = `🌍 *Localização do Visitante*\n📍 ${geo.city}, ${geo.country_name}\n🏢 ${geo.org}\n🔢 IP: ${ip}`;
-                                sendTelegramMessage(geoMsg);
-                            }
-                        });
-                });
-        })();
 
         // Controlo do Overlay SaborosaAI
         const ATIVAR_SERIAL_TRAP = true;
